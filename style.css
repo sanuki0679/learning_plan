@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+/* 共通部分 
+-----------------------*/
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #8E7E7E;
+}
+
+h1 {
+    padding: 1% 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+
+
+
+.wrapper {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    border-radius: 5px;
+    background: linear-gradient(#0470dc, #13f1fc);
+}
+
+.title {
+    color: #FBE6DA;
+}
+
+.form-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    color: #0e0d0c;
+    background: #f1f4f3;
+}
+
+.errors {
+    color: #df2ac6;
+    background-color: #f1d5ef;
+    list-style: none;
+    margin: 20px 0;
+    padding: 10px 20px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 25px;
+    padding: 1% 0;
+    color: #0b0b0b;
+}
+
+.btn submit-btn {
+    color: #0e0d0c
+}
+
+/* フォーム */
+input[type="text"],
+input[type="date"] {
+    color: #0c0c0c;
+    background-color: #e5eff7;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: 700ms ease all;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+
+    border-radius: 9px;
+    width: 100%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #2057e2;
+    letter-spacing: 20px;
+}
+
+/* 未達成 */
+.incomplete-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    color: #0e0d0c;
+    background: #f4f2f1;
+}
+
+.plan-list {
+    color: #cdced5;
+    background-color: #e5eff7;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+
+    border-radius: 5px;
+}
+
+.plan-title {
+    color: #0e0d0c;
+    text-align: left;
+    padding: 0;
+}
+
+.plan-completion-date,
+.plan-due-date {
+    color: #0e0d0c;
+    padding: 0 10px 10px 20px;
+    text-align: center;
+}
+
+.done-link-area {
+    border: 0px solid #d74545;
+    border-radius: 9px;
+    width: 10%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #e220df;
+    letter-spacing: 5px;
+}
+
+.edit-link-area {
+    border: 0px solid #d74545;
+    border-radius: 9px;
+    width: 10%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #5120e2;
+    letter-spacing: 5px;
+}
+
+.delete-link-area {
+    border: 0px solid #d74545;
+    border-radius: 9px;
+    width: 10%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #720a04;
+    letter-spacing: 5px;
+}
+
+/* 完了 */
+.complete-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    color: #fbfbfb;
+    background: #f4f1f1;
+}
+
+.done-link-aream {
+    border: 0px solid #d74545;
+    border-radius: 9px;
+    width: 10%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #e28e20;
+    letter-spacing: 5px;
+}

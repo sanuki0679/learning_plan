@@ -83,7 +83,7 @@ function update_done_by_id($id, $status)
     UPDATE
         plans
     SET
-        date_format(completion_date, '%Y%m%d') = :status
+        completion_date = :status
     WHERE
         id = :id
     EOM;
@@ -184,4 +184,78 @@ function find_by_id($id)
 
     // 結果の取得
     return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+// プラン更新時のバリデーション
+function update_validate($title, $due_date, $plan) {
+    // 初期化
+    $errors = [];
+
+    if (empty($title)) {
+        $errors[] = MSG_TITLE_REQUIRED;
+    }
+
+    if ($title == $plan['title']) {
+        $errors[] = MSG_TITLE_NO_CHANGE;
+    }
+
+    if ($due_date == $plan['due_date']) {
+        $errors[] = MSG_DUE_DATE_REQUIRED;
+    }
+
+    return $errors;
+}
+
+// プラン更新
+function update_plan($id, $title, $due_date)
+{
+    // データベースに接続
+    $dbh = connect_db();
+
+    // $id を使用してデータを更新
+    $sql = <<<EOM
+    UPDATE
+        plans
+    SET
+        title = :title,
+        due_date = :due_date
+    WHERE
+        id = :id
+    EOM;
+
+
+    // プリペアドステートメントの準備
+    $stmt = $dbh->prepare($sql);
+
+    // パラメータのバインド
+    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+    $stmt->bindValue(':due_date', $due_date, PDO::PARAM_STR);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+    // プリペアドステートメントの実行
+    $stmt->execute();
+}
+
+// タスク削除
+function delete_plan($id)
+{
+    // データベースに接続
+    $dbh = connect_db();
+
+    // $id を使用してデータを削除
+    $sql = <<<EOM
+    DELETE FROM
+        plans
+    WHERE
+        id = :id
+    EOM;
+
+    // プリペアドステートメントの準備
+    $stmt = $dbh->prepare($sql);
+
+    // パラメータのバインド
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+    // プリペアドステートメントの実行
+    $stmt->execute();
 }

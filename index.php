@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // バリデーション
     $errors = insert_validate($title, $due_date);
 
-
     // エラーチェック
     if (empty($errors)) {
         // 学習内容登録処理の実行
@@ -69,53 +68,70 @@ $comp_plans = find_plan_by_comp()
 
                     </tr>
 
-                    <?php foreach ($notyet_plans as $plan) : ?>
-                        <tr>
-
-                            <th class="plan-title"><?= h($plan['title']) ?></td>
-                            <th class="plan-due-date"><?= h($plan['due_date']) ?></td>
-
-                            
-                            <!-- done.php へのURLを追記 -->
-                            <th class="done-link-area"><a href="done.php?id=<?= h($plan['id']) ?>" >完了</a></th>
-                            <th class="edit-link-area">編集</th>
-                            <th class="delete-link-area">削除</th>
-                        </tr>
-                    <?php endforeach; ?>
                 </thead>
                 <tbody>
 
                     <!-- 未完了のデータを表示 -->
-
-                </tbody>
-            </table>
-        </div>
-        <div class="complete-area">
-            <h2 class="sub-title">完了</h2>
-            <table class="plan-list">
-                <thead>
-                    <tr>
-                        <th class="plan-title">学習内容</th>
-                        <th class="plan-completion-date">完了日</th>
-
-                    </tr>
-
-                    <?php foreach ($comp_plans as $lp) : ?>
+                    <?php foreach ($notyet_plans as $plan) : ?>
                         <tr>
-                            <th class="plan-title"><?= h($lp['title']) ?></td>
-                            <th class="plan-due-date"><?= h($lp['completion_date']) ?></td>
-                            <th class="done-link-area">未完了</th>
-                            <th class="edit-link-area">編集</th>
-                            <th class="delete-link-area">削除</th>
-                        </tr>
-                    <?php endforeach; ?>
-                </thead>
-                <tbody>
 
-                    <!-- 完了済のデータを表示 -->
+                            <th class="plan-title"><?= h($plan['title']) ?></td>
+                            <!-- 期限切れだったら赤く表示する ためのif文 -->
+                                <?php if (strtotime('now') >= strtotime($plan['due_date'])) : ?>
 
-                </tbody>
-            </table>
+                            <th class="expired"><?= h(date('Y/m/d', strtotime($plan['due_date']))) ?></td>
         </div>
     </div>
+
+<?php else : ?>
+    <th class="plan-due-date"><?= h(date('Y/m/d', strtotime($plan['due_date']))) ?></td>
+    <?php endif; ?>
+
+    <!-- done.php へのURLを追記 -->
+    <th class="done-link-area"><a href="done.php?id=<?= h($plan['id']) ?>">完了</a></th>
+
+    <!-- edit.php へのURLを追記 -->
+    <th class="edit-link-area"><a href="edit.php?id=<?= h($plan['id']) ?>">編集</a></th>
+
+    <!-- delete.php へのURLを追記 -->
+    <th class="delete-link-area"><a href="delete.php?id=<?= h($plan['id']) ?>">削除</a></th>
+
+    </tr>
+
+<?php endforeach; ?>
+
+</tbody>
+</table>
+</div>
+<div class="complete-area">
+    <h2 class="sub-title">完了</h2>
+    <table class="plan-list">
+        <thead>
+            <tr>
+                <th class="plan-title">学習内容</th>
+                <th class="plan-completion-date">完了日</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            <!-- 完了済のデータを表示 -->
+            <?php foreach ($comp_plans as $plan) : ?>
+                <tr>
+                    <th class="plan-title"><?= h($plan['title']) ?></td>
+                    <th class="plan-due-date"><?= h(date('Y/m/d', strtotime($plan['completion_date']))) ?></td>
+
+                        <!-- done.php へのURLを追記 -->
+                    <th class="done-cancel-link-area"><a href="done_cancel.php?id=<?= h($plan['id']) ?>">未完了</a></th>
+                    <!-- edit.php へのURLを追記 -->
+                    <th class="edit-link-area"><a href="edit.php?id=<?= h($plan['id']) ?>">編集</a></th>
+
+                    <!-- delete.php へのURLを追記 -->
+                    <th class="delete-link-area"><a href="delete.php?id=<?= h($plan['id']) ?>">削除</a></th>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+</div>
 </body>

@@ -5,8 +5,8 @@ require_once __DIR__ . '/functions.php';
 $id = filter_input(INPUT_GET, 'id');
 
 // 学習内容完了処理の実行
-$status = NULL;
-update_done_by_id($id, $status);
+$comp_date = NULL;
+update_done_by_id($id, $comp_date);
 
 // index.php にリダイレクト
 header('Location: index.php');

@@ -73,7 +73,7 @@ function insert_plan($title, $due_date)
 
 
 // 学習内容完了
-function update_done_by_id($id, $status)
+function update_done_by_id($id, $comp_date)
 {
     // データベースに接続
     $dbh = connect_db();
@@ -83,7 +83,7 @@ function update_done_by_id($id, $status)
     UPDATE
         plans
     SET
-        completion_date = :status
+        completion_date = :comp_date
     WHERE
         id = :id
     EOM;
@@ -94,7 +94,7 @@ function update_done_by_id($id, $status)
     
     // パラメータのバインド
     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-    $stmt->bindValue(':status', $status, PDO::PARAM_INT);
+    $stmt->bindValue(':comp_date', $comp_date, PDO::PARAM_INT);
     
     // プリペアドステートメントの実行
     $stmt->execute();
@@ -193,6 +193,10 @@ function update_validate($title, $due_date, $plan) {
 
     if (empty($title)) {
         $errors[] = MSG_TITLE_REQUIRED;
+    }
+
+    if (empty($due_date)) {
+        $errors[] = MSG_DUE_DATE_REQUIRED;
     }
 
     if ($title == $plan['title']) {

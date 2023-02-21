@@ -122,26 +122,25 @@ input[type="button"] {
     width: 100%;
     margin: 0 auto;
     margin-bottom: 15px;
-
     border-radius: 5px;
 }
 
 .plan-title {
     color: #0e0d0c;
     text-align: left;
-    padding: 0;
+    padding: 10px 10px ;
 }
 
 .expired {
     color: red;
-    padding: 0 10px 10px 20px;
+    padding: 10px 10px ;
     text-align: center;
 }
 
 .plan-completion-date,
 .plan-due-date {
     color: #131212;
-    padding: 0 10px 10px 20px;
+    padding: 10px 10px ;
     text-align: center;
 }
 
@@ -150,10 +149,9 @@ input[type="button"] {
 }
 
 .done-link-area {
-    
+    padding: 10px 10px ;
     border-radius: 9px;
     width: 10%;
-    padding: 0px 6px 6px 6px;
     font-weight: 300;
     background: #e220df;
     letter-spacing: 5px;
@@ -166,7 +164,7 @@ input[type="button"] {
 .done-cancel-link-area {
     border-radius: 9px;
     width: 10%;
-    padding: 0px 6px 6px 6px;
+    
     font-weight: 300;
     background: #54e220;
     letter-spacing: 5px;
@@ -179,7 +177,7 @@ input[type="button"] {
 .edit-link-area {
     border-radius: 9px;
     width: 10%;
-    padding: 0px 6px 6px 6px;
+    
     font-weight: 300;
     background: #5120e2;
     letter-spacing: 5px;
@@ -193,7 +191,7 @@ input[type="button"] {
 
     border-radius: 9px;
     width: 10%;
-    padding: 0px 6px 6px 6px;
+    
     font-weight: 300;
     background: #de1308;
     letter-spacing: 5px;
@@ -205,8 +203,8 @@ input[type="button"] {
     margin: 30px auto;
     border: 1px solid #dfdfdc;
     padding: 10px 50px 10px 50px;
+    
     border-radius: 5px;
-
     background: #f4f1f1;
 }
 
@@ -218,6 +216,13 @@ input[type="button"] {
 .edit .edit-submit-upd {
     background: #FF00FF;
     border: 1px solid #ffffff;
+}
+.done-cancel-link-area a,
+.done-link-area a,
+.edit-link-area a,
+.delete-link-area a {
+    color: #fff;
+    text-decoration:none;
 }
 
 /* レスポンシブ対応

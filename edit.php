@@ -58,17 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form action="" method="post">
             <div class="edit">
                 <label for="title">学習内容</label>
-                
                 <input type="text" name="title" value="<?= h($plan['title']) ?>">
                 <label for="due_date">期限日</label>
                 <input type="date" name="due_date" value="<?= h($plan['due_date']) ?>">
             
-                
-                    <input type="submit" class="edit-submit-upd" value="更新">
-                    <input type="button" onclick="location.href='index.php'" value="戻る">
+                <input type="submit" class="edit-submit-upd" value="更新">
+                <input type="button" onclick="location.href='index.php'" value="戻る">
                     
-                    
-                </div>
+            </div>
 
             </form>
         </div>

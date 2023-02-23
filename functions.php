@@ -114,7 +114,9 @@ function find_plan_by_done()
     FROM
         plans
     WHERE
-        completion_date IS :status;
+        completion_date IS :status
+    ORDER BY
+        due_date
     EOM;
 
     // プリペアドステートメントの準備
@@ -142,14 +144,14 @@ function find_plan_by_comp()
     FROM
         plans
     WHERE
-        completion_date 
+        completion_date
+    ORDER BY
+        completion_date
+    DESC 
     EOM;
 
     // プリペアドステートメントの準備
     $stmt = $dbh->prepare($sql);
-
-    // パラメータのバインド
-
 
     // プリペアドステートメントの実行
     $stmt->execute();
@@ -204,7 +206,11 @@ function update_validate($title, $due_date, $plan) {
     }
 
     if ($due_date == $plan['due_date']) {
-        $errors[] = MSG_DUE_DATE_REQUIRED;
+        $errors[] = MSG_DUE_DATE_NO_CHANGE;
+    }
+
+    if (($title != $plan['title']) || ($due_date != $plan['due_date'])) {
+        $errors = [];
     }
 
     return $errors;

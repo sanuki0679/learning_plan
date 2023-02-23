@@ -9,4 +9,4 @@ define('PASSWORD', '1234');
 define('MSG_TITLE_REQUIRED', '学習内容を入力してください');
 define('MSG_TITLE_NO_CHANGE', '学習内容が変更されていません');
 define('MSG_DUE_DATE_REQUIRED', '期限日を入力してください');
-
+define('MSG_DUE_DATE_NO_CHANGE', '期限日が変更されていません');

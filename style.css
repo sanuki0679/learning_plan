@@ -110,9 +110,9 @@ input[type="button"] {
     width: 80%;
     margin: 30px auto;
     border: 1px solid #dfdfdc;
-    padding: 10px 50px 10px 50px;
+    padding: 10px 5% 10px 5%;
     border-radius: 5px;
-    color: #0e0d0c;
+
     background: #f4f2f1;
 }
 
@@ -120,27 +120,27 @@ input[type="button"] {
 
     background-color: #e5eff7;
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 15px;
+
+    margin-bottom: 25px;
     border-radius: 5px;
 }
 
 .plan-title {
     color: #0e0d0c;
     text-align: left;
-    padding: 10px 10px ;
+    padding: 10px 10px;
 }
 
 .expired {
     color: red;
-    padding: 10px 10px ;
+    padding: 10px 10px;
     text-align: center;
 }
 
 .plan-completion-date,
 .plan-due-date {
     color: #131212;
-    padding: 10px 10px ;
+    padding: 10px 10px;
     text-align: center;
 }
 
@@ -149,7 +149,7 @@ input[type="button"] {
 }
 
 .done-link-area {
-    padding: 10px 10px ;
+
     border-radius: 9px;
     width: 10%;
     font-weight: 300;
@@ -164,7 +164,7 @@ input[type="button"] {
 .done-cancel-link-area {
     border-radius: 9px;
     width: 10%;
-    
+
     font-weight: 300;
     background: #54e220;
     letter-spacing: 5px;
@@ -177,7 +177,7 @@ input[type="button"] {
 .edit-link-area {
     border-radius: 9px;
     width: 10%;
-    
+
     font-weight: 300;
     background: #5120e2;
     letter-spacing: 5px;
@@ -191,7 +191,7 @@ input[type="button"] {
 
     border-radius: 9px;
     width: 10%;
-    
+
     font-weight: 300;
     background: #de1308;
     letter-spacing: 5px;
@@ -202,8 +202,8 @@ input[type="button"] {
     width: 80%;
     margin: 30px auto;
     border: 1px solid #dfdfdc;
-    padding: 10px 50px 10px 50px;
-    
+    padding: 10px 5% 10px 5%;
+
     border-radius: 5px;
     background: #f4f1f1;
 }
@@ -217,12 +217,20 @@ input[type="button"] {
     background: #FF00FF;
     border: 1px solid #ffffff;
 }
+
+/* 完了、未完了、編集、削除 ボタンの文字の設定 */
 .done-cancel-link-area a,
 .done-link-area a,
 .edit-link-area a,
 .delete-link-area a {
     color: #fff;
-    text-decoration:none;
+    text-decoration: none;
+}
+
+/* table 間の隙間を広げる */
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
 }
 
 /* レスポンシブ対応

@@ -22,6 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         // 学習内容登録処理の実行
         insert_plan($title, $due_date);
+
+        // 登録データの初期化
+        $title = '';
+        $due_date = '';
     }
 }
 // 未完了プランの取得
@@ -49,14 +53,10 @@ $comp_plans = find_plan_by_comp()
             <?php endif; ?>
             <form action="" method="post">
                 <label for="title">学習内容</label>
-                <?php if (!empty($title)) : ?>
                 <input type="text" name="title" value="<?= h($title) ?>">
-                <?php $title = '';?>
-                <?php else : ?>
-                <input name="title" type="text">
-                <?php endif; ?>
+
                 <label for="due_date">期限日</label>
-                <input name="due_date" type="date">
+                <input type="date" name="due_date" value="<?= h($due_date) ?>">
                 <input class="btn submit-btn" type="submit" value="追加">
             </form>
         </div>
@@ -75,23 +75,24 @@ $comp_plans = find_plan_by_comp()
                         <tr>
                             <th class="plan-title"><?= h($plan['title']) ?>
                                 <!-- 期限切れだったら赤く表示する ためのif文 -->
-                            <?php if (strtotime('now') >= strtotime($plan['due_date'])) : ?></th>
+                                <?php if (strtotime('now') >= strtotime($plan['due_date'])) : ?>
+                            </th>
                             <th class="expired"><?= h(date('Y/m/d', strtotime($plan['due_date']))) ?></th>
-                            <?php else : ?>
+                        <?php else : ?>
                             <th class="plan-due-date"><?= h(date('Y/m/d', strtotime($plan['due_date']))) ?></th>
-                            <?php endif; ?>
-                            <!-- done.php へのURLを追記 --></th>
-                            <th class="done-link-area">
-                                <a href="done.php?id=<?= h($plan['id']) ?>">完了</a>
-                            </th>
-                            <!-- edit.php へのURLを追記 -->
-                            <th class="edit-link-area">
-                                <a href="edit.php?id=<?= h($plan['id']) ?>">編集</a>
-                            </th>
-                            <!-- delete.php へのURLを追記 -->
-                            <th class="delete-link-area">
-                                <a href="delete.php?id=<?= h($plan['id']) ?>">削除</a>
-                            </th>
+                        <?php endif; ?>
+                        <!-- done.php へのURLを追記 --></th>
+                        <th class="done-link-area">
+                            <a href="done.php?id=<?= h($plan['id']) ?>">完了</a>
+                        </th>
+                        <!-- edit.php へのURLを追記 -->
+                        <th class="edit-link-area">
+                            <a href="edit.php?id=<?= h($plan['id']) ?>">編集</a>
+                        </th>
+                        <!-- delete.php へのURLを追記 -->
+                        <th class="delete-link-area">
+                            <a href="delete.php?id=<?= h($plan['id']) ?>">削除</a>
+                        </th>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

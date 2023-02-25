@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // エラーチェック
     if (empty($errors)) {
         // 学習内容登録処理の実行
-        // 後ほど ここに insert_plan関数を呼び出す処理を追記する
+        
         update_plan($id, $title, $due_date);
 
         // index.php にリダイレクト

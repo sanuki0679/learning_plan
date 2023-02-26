@@ -1,0 +1,304 @@
+@charset "UTF-8";
+
+/* 共通部分 
+-----------------------*/
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #8E7E7E;
+}
+
+h1 {
+    padding: 1% 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.wrapper {
+
+    border: 1px solid #dfdfdc;
+    border-radius: 5px;
+    background: linear-gradient(#0470dc, #13f1fc);
+}
+
+.title {
+    color: #232120;
+}
+
+.form-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 20px 50px;
+    border-radius: 5px;
+    color: #110f0d;
+    background: #f1f4f3;
+}
+
+.form-area .title {
+    color: #0c0b0a;
+}
+
+.errors {
+    color: #df2ac6;
+    background-color: #f1d5ef;
+    list-style: none;
+    margin: 20px 0;
+    padding: 10px 20px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 25px;
+    padding: 1% 0;
+    color: #0b0b0b;
+}
+
+.btn submit-btn {
+    color: #0e0d0c;
+    padding: 1% 0;
+}
+
+/* フォーム */
+input[type="text"],
+input[type="date"] {
+    color: #0c0c0c;
+    background-color: #e5eff7;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: 700ms ease all;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background: #e241aa;
+}
+
+input[type="submit"] {
+
+    border-radius: 9px;
+    width: 100%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #2057e2;
+    letter-spacing: 20px;
+}
+
+input[type="button"]:hover {
+    background: #8c41e2;
+}
+
+input[type="button"] {
+    border-radius: 9px;
+    width: 100%;
+    padding: 6px;
+    font-weight: 300;
+    color: #e1e5e7;
+    background: #2057e2;
+    letter-spacing: 20px;
+}
+
+/* 未達成 */
+.incomplete-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 10px 5% 10px 5%;
+    border-radius: 5px;
+
+    background: #f4f2f1;
+}
+
+.plan-list {
+
+    background-color: #e5eff7;
+    width: 100%;
+
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.plan-title {
+    color: #0e0d0c;
+    text-align: left;
+    padding: 10px 10px;
+}
+
+.expired {
+    color: red;
+    padding: 10px 10px;
+    text-align: left;
+}
+
+.plan-completion-date,
+.plan-due-date {
+    color: #131212;
+    padding: 10px 10px;
+    text-align: left;
+}
+
+.done-link-area a:hover {
+    background: #f37af1;
+}
+
+.done-link-area a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+
+    font-weight: 300;
+    background: #e220df;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.done-cancel-link-area a:hover {
+    background: #7af3dd;
+}
+
+.done-cancel-link-area a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+
+    font-weight: 300;
+    background: #54e220;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.edit-link-area a:hover {
+    background: #7049e5;
+}
+
+.edit-link-area a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+
+    font-weight: 300;
+    background: #5120e2;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.delete-link-area a:hover {
+    background: #ec5048;
+}
+
+.delete-link-area a {
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+
+    font-weight: 300;
+    background: #de1308;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+
+/* 完了 */
+.complete-area {
+    width: 80%;
+    margin: 30px auto;
+    border: 1px solid #dfdfdc;
+    padding: 10px 5% 10px 5%;
+
+    border-radius: 5px;
+    background: #f4f1f1;
+}
+
+/* edit.php */
+.edit {
+    color: black;
+}
+
+.edit .edit-submit-upd {
+    background: #FF00FF;
+    border: 1px solid #ffffff;
+}
+
+/* table 間の隙間を広げる */
+table {
+    border-collapse: separate;
+    border-spacing: 3px 5px;
+}
+
+/* レスポンシブ対応
+-----------------------*/
+@media screen and (max-width: 1100px) {
+    .wrapper {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .wrapper {
+        width: 600px;
+        font-size: 90%;
+    }
+
+    .plan-title {
+        width: 30%;
+        padding: 5px 5px;
+        font-size: 90%;
+    }
+
+    .expired,
+    .plan-completion-date,
+    .plan-due-date {
+        width: 30%;
+        padding: 5px 5px;
+        text-align: left;
+        font-size: 90%;
+    }
+
+    .done-cancel-link-area a, 
+    .done-link-area a,
+    .edit-link-area a,
+    .delete-link-area a {
+        width: 100%;
+        font-size: 90%;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .wrapper {
+        width: 400px;
+    }
+}

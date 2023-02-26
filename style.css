@@ -19,7 +19,6 @@ h1 {
 
 .wrapper {
 
-    margin: 30px auto;
     border: 1px solid #dfdfdc;
     border-radius: 5px;
     background: linear-gradient(#0470dc, #13f1fc);
@@ -33,7 +32,7 @@ h1 {
     width: 80%;
     margin: 30px auto;
     border: 1px solid #dfdfdc;
-    padding: 10px 50px 10px 50px;
+    padding: 20px 50px;
     border-radius: 5px;
     color: #110f0d;
     background: #f1f4f3;

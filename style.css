@@ -18,7 +18,7 @@ h1 {
 }
 
 .wrapper {
-    width: 80%;
+
     margin: 30px auto;
     border: 1px solid #dfdfdc;
     border-radius: 5px;
@@ -134,68 +134,88 @@ input[type="button"] {
 .expired {
     color: red;
     padding: 10px 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .plan-completion-date,
 .plan-due-date {
     color: #131212;
     padding: 10px 10px;
-    text-align: center;
+    text-align: left;
 }
 
-.done-link-area:hover {
+.done-link-area a:hover {
     background: #f37af1;
 }
 
-.done-link-area {
-
+.done-link-area a {
+    color: #fff;
+    text-decoration: none;
     border-radius: 9px;
-    width: 10%;
+
     font-weight: 300;
     background: #e220df;
-    letter-spacing: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
 }
 
-.done-cancel-link-area:hover {
+.done-cancel-link-area a:hover {
     background: #7af3dd;
 }
 
-.done-cancel-link-area {
+.done-cancel-link-area a {
+    color: #fff;
+    text-decoration: none;
     border-radius: 9px;
-    width: 10%;
 
     font-weight: 300;
     background: #54e220;
-    letter-spacing: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
 }
 
-.edit-link-area:hover {
+.edit-link-area a:hover {
     background: #7049e5;
 }
 
-.edit-link-area {
+.edit-link-area a {
+    color: #fff;
+    text-decoration: none;
     border-radius: 9px;
-    width: 10%;
 
     font-weight: 300;
     background: #5120e2;
-    letter-spacing: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
 }
 
-.delete-link-area:hover {
+.delete-link-area a:hover {
     background: #ec5048;
 }
 
-.delete-link-area {
-
+.delete-link-area a {
+    color: #fff;
+    text-decoration: none;
     border-radius: 9px;
-    width: 10%;
 
     font-weight: 300;
     background: #de1308;
-    letter-spacing: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
 }
+
 
 /* 完了 */
 .complete-area {
@@ -218,19 +238,10 @@ input[type="button"] {
     border: 1px solid #ffffff;
 }
 
-/* 完了、未完了、編集、削除 ボタンの文字の設定 */
-.done-cancel-link-area a,
-.done-link-area a,
-.edit-link-area a,
-.delete-link-area a {
-    color: #fff;
-    text-decoration: none;
-}
-
 /* table 間の隙間を広げる */
 table {
     border-collapse: separate;
-    border-spacing: 5px;
+    border-spacing: 3px 5px;
 }
 
 /* レスポンシブ対応
@@ -255,28 +266,40 @@ table {
 
 @media screen and (max-width: 800px) {
 
-    .wrapper,
-    .show-wrapper,
-    .form-wrapper {
+    .wrapper {
         width: 600px;
+        font-size: 90%;
     }
 
-    .btn-area {
-        flex-flow: column;
+    .plan-title {
+        width: 30%;
+        padding: 5px 5px;
+        font-size: 90%;
     }
 
-    .edit-btn,
-    .delete-btn,
-    .submit-btn {
-        margin-bottom: 10px;
+    .expired,
+    .plan-completion-date,
+    .plan-due-date {
+        width: 30%;
+        padding: 5px 5px;
+        text-align: left;
+        font-size: 90%;
     }
+
+    .done-cancel-link-area a, 
+    .done-link-area a,
+    .edit-link-area a,
+    .delete-link-area a {
+        width: 100%;
+        font-size: 90%;
+    }
+
+
 }
 
 @media screen and (max-width: 600px) {
 
-    .wrapper,
-    .show-wrapper,
-    .form-wrapper {
+    .wrapper {
         width: 400px;
     }
 }

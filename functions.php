@@ -201,12 +201,9 @@ function update_validate($title, $due_date, $plan) {
         $errors[] = MSG_DUE_DATE_REQUIRED;
     }
 
-    if ($title == $plan['title']) {
-        $errors[] = MSG_TITLE_NO_CHANGE;
-    }
-
-    if ($due_date == $plan['due_date']) {
-        $errors[] = MSG_DUE_DATE_NO_CHANGE;
+    if ($title == $plan['title'] &&
+        $due_date == $plan['due_date']) {
+        $errors[] = MSG_NO_CHANGE;
     }
 
     if (($title != $plan['title']) || ($due_date != $plan['due_date'])) {
